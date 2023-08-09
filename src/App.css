@@ -4,7 +4,8 @@ body{
 
 
 .container{
-  width: 600px;
+  /* width: 600px; */
+  width: 40%;
   display: block;
   margin: 2em auto;
   padding: 10px 15px;
@@ -61,6 +62,8 @@ header{
 
 .baby-name{
   font-size: 3em;
+  color: #FFE17B;
+  font-weight: 500;
 }
 
 .baby-names{
@@ -80,10 +83,13 @@ footer{
 
 .results{
   text-align: center;
+  font-size: 0.75em;
 }
 
 .results-hidden{
   display: none;
+  font-size: 0.75em;
+  text-align: center;
 }
 
 .empty{

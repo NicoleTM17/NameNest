@@ -1,0 +1,13 @@
+
+@media (max-width: 540px){
+
+  .container{
+    width: 80%;
+  }
+
+  .search{
+    width: 70%;
+    font-size: 0.75em;
+    padding: 10px 10px;
+  }
+}
