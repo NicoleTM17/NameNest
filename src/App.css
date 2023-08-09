@@ -1,38 +1,91 @@
-.App {
+body{
+  background-color: #A1CCD1
+}
+
+
+.container{
+  width: 600px;
+  display: block;
+  margin: 2em auto;
+  padding: 10px 15px;
+  background-color: white;
+  border: 5px solid #FFD1DA;
+}
+
+header{
+  text-align: center;
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.searchbar{
+  text-align: center;
+  margin-top: 3em;
+}
+
+.search-bar{
+  margin-bottom: 3em;
+}
+
+.search{
+  padding: 10px 15px;
+  border-radius: 8px;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.submit-btn{
+  padding: 10px 5px;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin-left: -4em;
+  cursor: pointer;
+}
+
+.submit-btn:hover{
+  opacity: 0.8;
+}
+
+.names-card{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  padding: 5px 20px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.baby-name{
+  font-size: 3em;
+}
+
+.baby-names{
+  line-height: 1.5;
+}
+
+footer{
+  text-align: center;
+  font-size: 0.75em;
+  opacity: 0.6;
+  margin-top: 3em;
+}
+
+
+
+/* CONDITIONAL */
+
+.results{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.results-hidden{
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.empty{
+  list-style-type: none;
 }
