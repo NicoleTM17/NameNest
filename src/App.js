@@ -16,7 +16,9 @@ function App() {
   // event for input box
   function handleChange(event){
     // console.log(event.target.value);
-    setGender(event.target.value);
+    const lowercaseGender = event.target.value.toLowerCase();
+    console.log(lowercaseGender);
+    setGender(lowercaseGender);
     setSearchError(false);
   };
 
