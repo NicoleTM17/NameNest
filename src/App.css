@@ -1,5 +1,5 @@
 body{
-  background-color: #A1CCD1
+  background-color: #A1CCD1;
 }
 
 
@@ -11,6 +11,19 @@ body{
   padding: 10px 15px;
   background-color: white;
   border: 5px solid #FFD1DA;
+}
+
+.logo{
+  display: block;
+  margin: 0 auto;
+}
+
+.tag{
+  font-size: 0.75em;
+  color: #A1CCD1;
+  text-align: center;
+  margin-top: -4em;
+  font-style: italic;
 }
 
 header{
@@ -32,27 +45,30 @@ header{
   padding: 10px 15px;
   border-radius: 8px;
   width: 50%;
-  border: 1px solid black;
+  border: 2px solid #A1CCD1;
 }
 
 .submit-btn{
   padding: 10px 5px;
   border-radius: 8px;
-  border: 1px solid black;
-  margin-left: -4em;
+  border: 2px solid #A1CCD1;
+  margin-left: 0.2em;
   cursor: pointer;
+  background-color: #A1CCD1;
+  color: white;
+  transition: 200ms ease-in-out;
 }
 
 .submit-btn:hover{
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .names-card{
-  text-align: center;
+  /* text-align: center; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
+  border: 3px solid #FFE17B;
   padding: 5px 20px;
   width: 50%;
   margin: 0 auto;
@@ -61,9 +77,15 @@ header{
 }
 
 .baby-name{
-  font-size: 3em;
+  font-size: 1.5em;
   color: #FFE17B;
   font-weight: 500;
+  list-style:url(../public/images/flower.png);
+}
+
+.baby-name-space{
+  position: relative;
+  left: 1px;
 }
 
 .baby-names{
@@ -84,6 +106,8 @@ footer{
 .results{
   text-align: center;
   font-size: 0.75em;
+  color: #A1CCD1;
+  font-weight: bold;
 }
 
 .results-hidden{

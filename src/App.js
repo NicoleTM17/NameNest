@@ -9,10 +9,10 @@ function App() {
   const [gender, setGender] = useState(''); // useState for typed in gender (boy, girl, neutral)
   const [names, setNames] = useState([]); // useState for each of the names received
   const [searchError, setSearchError] = useState(false); // useState for if get request fails
-  const [submitPressed, setSubmitPressed] = useState(false);
+  const [submitPressed, setSubmitPressed] = useState(false); // useState for submitting form and passing useEffect
 
-  const apiKey = process.env.API_NINJAS_API_KEY; // API key currently stored in env file
-
+  const apiKey = process.env.REACT_APP_API_NINJAS_API_KEY; // API key currently stored in env file
+  // YOUR process.env ALWAYS MUST START WITH REACT_APP!!!!
   // event for input box
   function handleChange(event){
     // console.log(event.target.value);
@@ -24,44 +24,46 @@ function App() {
   function handleSubmit(event){
     event.preventDefault();
     // console.log(event);
-    setSubmitPressed(true);
+
+    setSubmitPressed(true); // when SubmitPressed is true, the useEffect will run
   };
 
 
   useEffect(() => {
     // send request
     // save response to variable
-    if(submitPressed && (gender === 'boy' || gender === 'girl' || gender === 'neutral')) {
+    if(submitPressed && (gender === 'boy' || gender === 'girl' || gender === 'neutral')) { // making sure boy, girl, or neutral are written
       console.log('Fetching data...');
       fetch(`https://api.api-ninjas.com/v1/babynames?gender=${gender}`, {
-        headers: {
-          'X-Api-Key': apiKey
-        }
+        headers: {'X-Api-Key': apiKey}, // passing apiKey through as a header
       })
 
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setNames(data);
         setSearchError(false);
-        setSubmitPressed(false);
+        setSubmitPressed(false); // false so that useEffect isn't rerun
+        setGender(''); // clearing input field (currently not working for some reason)
       })
       .catch(error => {
         console.error('A problem occurred trying to fetch from api-Ninjas:', error);
-        setSearchError(true);
+        setSearchError(true); // error message will pop up
         setSubmitPressed(false);
       });
+    } else if (submitPressed && (submitPressed !== '' && submitPressed !== null)) {
+      setSearchError(true); // if submitpressed is true and submit pressed is not an empty field, show error message
     }
   }, [gender, apiKey, submitPressed]); // the dependency array specifies which values/variables should be watched for changes
 // Any changes to the 'gender' useState will cause the effect to be rerun!
 
 
 
-
-
   return (
     <div className="container">
-      <header>Generate baby names!</header>
+      {/* <header>Generate Baby Names</header> */}
+      <img className='logo' src='images/namenest.png' alt='logo'/>
+      <p className='tag'>Generate popular, simple or unique names!</p>
 
       <div className='search-bar'>
         <form onSubmit={handleSubmit} className='searchbar'>
@@ -75,7 +77,7 @@ function App() {
         <ul className='baby-names'>
           {names.length > 0 ? ( // if there is content in the names array, map through the names and store each in an li
             names.map((name, index) => (
-              <li className='baby-name' key={index}>{name}</li>
+              <li className='baby-name' key={index}><span className='baby-name-space'>{name}</span></li>
             ))
           ) : (
             <li className='empty'></li>
