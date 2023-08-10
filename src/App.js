@@ -12,7 +12,7 @@ function App() {
   const [submitPressed, setSubmitPressed] = useState(false); // useState for submitting form and passing useEffect
 
   const apiKey = process.env.REACT_APP_API_NINJAS_API_KEY; // API key currently stored in env file
-  // YOUR process.env ALWAYS MUST START WITH REACT_APP!!!!
+  // YOUR process.env ALWAYS MUST START WITH REACT_APP!!!!!
   // event for input box
   function handleChange(event){
     // console.log(event.target.value);
