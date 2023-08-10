@@ -46,7 +46,7 @@ function App() {
         setNames(data);
         setSearchError(false);
         setSubmitPressed(false); // false so that useEffect isn't rerun
-        setGender(''); // clearing input field (currently not working for some reason)
+        // setGender('');
       })
       .catch(error => {
         console.error('A problem occurred trying to fetch from api-Ninjas:', error);
